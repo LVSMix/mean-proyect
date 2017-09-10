@@ -1,0 +1,38 @@
+1.- Crear un archivo ejercicio-node.js
+2.- Ejecutar npm init
+3.-  poner 
+     name: ejercicio-clase-1
+     descripcion: primer ejercicio
+     Los demas items se saltean con enter.
+     Cuandoo aparezce Is this ok? pongan yes.
+4.-  ejecutar npm install jquery --save
+5.-  ejecutar npm install jsdom --save
+6.-  Agregue estas dos sentencias:
+     var jsdom = require("jsdom");
+     $ = require("jquery")(new jsdom.JSDOM().window);
+7.-  Agregue este codigo antes de la creacion del server 
+        var options = {
+            host: 'jquery.com',
+            port: 80,
+            path: '/'
+        };
+
+        var html = '';
+        http.get(options, function(res) {
+            res.on('data', function(data) {
+                // collect the data chunks to the variable named "html"
+                html += data;
+            }).on('end', function() {
+                // the whole of webpage data has been collected. parsing time!
+                var title = $(html).find('title').text();
+                console.log(title);
+            });
+        });
+8.-  Agregue la creacion del servidor 
+     http.createServer(function(request, response) {
+        response.writeHead(200, {"Content-Type": "text/html"});
+        response.write(html);
+        response.end();
+    }).listen(8888);
+
+9.- Ejecuten el archivo con el comando node.
