@@ -50,7 +50,7 @@ app.post('/update', function(req, res) {
 });
 
 app.post('/remove', function(req, res) {
-    services.remove(req.body).then(function(data) {
+    services.remove(req.body.id).then(function(data) {
         res.json(data);
     }).catch(function(e) {
         res.send(e);

@@ -2,6 +2,9 @@
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/clase3DB');
+var ObjectId = require('mongodb').ObjectID;
+
+
 
 
 
@@ -10,8 +13,8 @@ function save(cliente) {
     // Set our collection
     var collection = db.get('clientecollection');
     return collection.insert({
-        "nombre": cliente.nombre,
-        "apellido": cliente.apellido
+        nombre: cliente.nombre,
+        apellido: cliente.apellido
     }, function(err, doc) {
         if (err) {
             // If it failed, return error
@@ -33,7 +36,7 @@ function list() {
 function get(id) {
     console.log("id" + id);
     var collection = db.get('clientecollection');
-    return collection.find({ "_id": id }, function(err, result) {
+    return collection.find({ _id: id }, function(err, result) {
         if (err) throw err;
         console.log(result);
         db.close();
@@ -41,9 +44,9 @@ function get(id) {
 }
 
 
-function remove(cliente) {
+function remove(id) {
     var collection = db.get('clientecollection');
-    return collection.remove({ "_id": cliente.id }, function(err, obj) {
+    return collection.remove({ _id: id }, function(err, obj) {
         if (err) throw err;
         console.log(obj.result.n + " document(s) deleted");
         db.close();
@@ -53,7 +56,7 @@ function remove(cliente) {
 function update(cliente) {
     console.log("cliente " + cliente);
     var collection = db.get('clientecollection');
-    return collection.update({ "_id": cliente.id }, { $set: { "nombre": cliente.nombre, "apellido": cliente.apellido } }, { multi: true }, function(err, obj) {
+    return collection.update({ _id: cliente.id }, { $set: { nombre: cliente.nombre, apellido: cliente.apellido } }, { multi: true }, function(err, obj) {
         if (err) throw err;
         console.log(obj.result + " document(s) updated");
         db.close();

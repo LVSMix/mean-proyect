@@ -15,10 +15,8 @@ function save(cliente) {
     return new Promise(function(resolve, reject) {
         try {
             resolve(dao.save(cliente));
-            console.log("Ejecute");
         } catch (e) {
             reject(e);
-            console.log("Error");
         }
     })
 }
@@ -45,10 +43,10 @@ function get(id) {
 }
 
 
-function remove(cliente) {
+function remove(id) {
     return new Promise(function(resolve, reject) {
         try {
-            resolve(dao.remove(cliente));
+            resolve(dao.remove(id));
         } catch (e) {
             reject(e);
         }
