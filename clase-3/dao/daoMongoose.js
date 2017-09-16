@@ -14,13 +14,6 @@ function save(cliente) {
     });
 }
 
-function list() {
-
-}
-
-function get(id) {
-
-}
 
 
-module.exports = { save, list, get }
+module.exports = { save }
