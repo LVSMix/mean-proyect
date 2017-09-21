@@ -3,6 +3,13 @@
         <h1>Clientes</h1>
         <table>
             <tr>
+                <td>Nombre de Usuario</td>
+                <td><input name="nombre" type="text" ng-model="nombre" /></td>
+                <td><button type="button" ng-click="saludo()">Saludame</button></td>
+                <label>{{saludoText}}</label>
+            </tr>
+            </br>
+            <tr>
                 <td width="40%">Nombre</td>
                 <td width="40%">Apellido</td>
             </tr>
