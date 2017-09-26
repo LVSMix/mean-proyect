@@ -1,8 +1,8 @@
 var clienteController = angular.module('clienteController', []);
 
 clienteController.controller('clienteController', ['$scope', '$http', 'version', 'servers',
-    'versionValue', 'randomize',
-    function($scope, $http, version, servers, versionValue, randomize) {
+    'versionValue', 'randomize', 'saludoService', 'saludoServiceFactory', 'saludoFunctionServiceFactory',
+    function($scope, $http, version, servers, versionValue, randomize, saludoService, saludoServiceFactory, saludoFunctionServiceFactory) {
         $scope.nombre = "";
         $scope.saludo = "";
 
@@ -12,6 +12,10 @@ clienteController.controller('clienteController', ['$scope', '$http', 'version',
             alert("version constants 2 =" + servers.DEVELOPMENT);
             alert("version value = " + versionValue);
             alert("version value function = " + randomize());
+
+            alert("saludoService tipo service = " + saludoService.saludo());
+            alert("saludoService tipo factory = " + saludoServiceFactory());
+            alert("saludoService tipo factory tipo Function = " + saludoFunctionServiceFactory.getSaludo());
         };
 
         $scope.all = function() {

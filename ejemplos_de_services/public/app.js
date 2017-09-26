@@ -1,5 +1,5 @@
 // Creación del módulo
-var angularApp = angular.module('angularApp', ['ngRoute', 'clienteController']);
+var angularApp = angular.module('angularApp', ['ngRoute', 'clienteController', 'saludoService', 'saludoServiceFactory', 'saludoFunctionServiceFactory']);
 
 //Servicios Constants
 angularApp.constant('version', '123456789');
