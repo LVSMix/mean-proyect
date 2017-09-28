@@ -1,0 +1,45 @@
+<div ng-init="init()" ng-controller="clienteController">
+    <div>
+        <table>
+            <tr>
+                <td>Nombre de Usuario</td>
+                <td><input name="nombre" type="text" ng-model="nombre" /></td>
+                <td><button type="button" ng-click="saludo()">Saludame</button></td>
+                <label>{{saludoText}}</label>
+            </tr>
+        </table>
+    </div>
+    <div mi-cliente></div>
+    <mi-cliente-dos cliente="cliente1"></mi-cliente-dos>
+    <div mi-cliente-tres></div>
+    <div>
+        <h1>Clientes</h1>
+        <table>
+            <tr>
+                <td width="40%">&nbsp;</td>
+                <td width="40%">Nombre</td>
+                <td width="40%">Apellido</td>
+            </tr>
+            <tr ng-repeat="cliente in clientes" ng-show="clientes.length >0">
+                <td width="20%">
+                    <input type="checkbox" value="cliente.id" />
+                </td>
+                <td width="40%">
+                    {{cliente.nombre}}
+                </td>
+                <td width="40%">
+                    {{cliente.apellido}}
+                </td>
+            </tr>
+            <tr ng-show="cliente == 'undefined' || clientes.length == 0" style="border:2px">
+                <td width="100%">
+                    No se ha encontrado resultados
+                </td>
+            </tr>
+        </table>
+        <br><br><br><br>
+        <button id="alta" ng-click="go('/altaCliente')">Alta</button>
+        <button id="baja">Eliminar</button>
+        <button id="modi">Modificar</button>
+    </div>
+</div>
