@@ -13,10 +13,14 @@
         <h1>Clientes</h1>
         <table>
             <tr>
+                <td width="40%">&nbsp;</td>
                 <td width="40%">Nombre</td>
                 <td width="40%">Apellido</td>
             </tr>
-            <tr ng-repeat="cliente in clientes" ng-show="clientes.size()>0">
+            <tr ng-repeat="cliente in clientes" ng-show="clientes.length >0">
+                <td width="20%">
+                    <input type="checkbox" value="cliente.id" />
+                </td>
                 <td width="40%">
                     {{cliente.nombre}}
                 </td>
@@ -24,8 +28,8 @@
                     {{cliente.apellido}}
                 </td>
             </tr>
-            <tr ng-show="cliente == 'undefined' || clientes.size() == 0" style="border:2px">
-                <td width="80%">
+            <tr ng-show="cliente == 'undefined' || clientes.length == 0" style="border:2px">
+                <td width="100%">
                     No se ha encontrado resultados
                 </td>
             </tr>
