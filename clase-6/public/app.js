@@ -1,11 +1,19 @@
 // Creación del módulo
-var angularApp = angular.module('angularApp', ['ngRoute', 'clienteController', 'ciudadesController', 'clienteService', 'ciudadesService']);
+var angularApp = angular.module('angularApp', ['ngRoute', 'clienteController', 'ciudadesController', 'homeController', 'clienteService', 'ciudadesService']);
 
 
 //Configuración de las rutas
-angularApp.config(function($routeProvider) {
+angularApp.config(function($routeProvider, $locationProvider) {
 
-    $routeProvider.when('/clientes', {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
+
+    $routeProvider.when('/home', {
+            templateUrl: 'pages/home.html',
+            controller: 'homeController'
+        }).when('/clientes', {
             templateUrl: 'pages/clientes.html',
             controller: 'clienteController'
         }).when('/ciudades', {
@@ -13,7 +21,7 @@ angularApp.config(function($routeProvider) {
             controller: 'ciudadesController'
         })
         .otherwise({
-            redirectTo: '/ciudades'
+            redirectTo: '/home'
         });
 
 });

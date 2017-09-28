@@ -1,0 +1,33 @@
+body {
+    background-color: lightblue;
+}
+
+#header {
+    padding: 0;
+    margin-left: -45px;
+    position: relative;
+}
+
+#header li {
+    display: inline;
+}
+
+#header li a {
+    font-family: Arial;
+    font-size: 20px;
+    text-decoration: none;
+    float: left;
+    padding: 10px;
+    background-color: #2175bc;
+    color: #fff;
+}
+
+#header li a:hover {
+    background-color: #2586d7;
+    margin-top: -2px;
+    padding-bottom: 12px;
+}
+
+#main {
+    display: flex
+}

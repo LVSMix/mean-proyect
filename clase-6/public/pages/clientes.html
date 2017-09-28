@@ -1,6 +1,5 @@
 <div ng-init="init()" ng-controller="clienteController">
     <div>
-        <h1>Clientes</h1>
         <table>
             <tr>
                 <td>Nombre de Usuario</td>
@@ -8,12 +7,16 @@
                 <td><button type="button" ng-click="saludo()">Saludame</button></td>
                 <label>{{saludoText}}</label>
             </tr>
-            </br>
+        </table>
+    </div>
+    <div>
+        <h1>Clientes</h1>
+        <table>
             <tr>
                 <td width="40%">Nombre</td>
                 <td width="40%">Apellido</td>
             </tr>
-            <tr ng-repeat="cliente in clientes">
+            <tr ng-repeat="cliente in clientes" ng-show="clientes.size()>0">
                 <td width="40%">
                     {{cliente.nombre}}
                 </td>
@@ -21,7 +24,15 @@
                     {{cliente.apellido}}
                 </td>
             </tr>
+            <tr ng-show="cliente == 'undefined' || clientes.size() == 0" style="border:2px">
+                <td width="80%">
+                    No se ha encontrado resultados
+                </td>
+            </tr>
         </table>
+        <br><br><br><br>
+        <button id="alta">Alta</button>
+        <button id="baja">Eliminar</button>
+        <button id="modi">Modificar</button>
     </div>
-    <div><a ng-href="ciudades">Ciudades</a></div>
 </div>
