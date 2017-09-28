@@ -13,6 +13,9 @@ angularApp.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/home', {
             templateUrl: 'pages/home.html',
             controller: 'homeController'
+        }).when('/altaCliente', {
+            templateUrl: 'pages/clientes/altaCliente.html',
+            controller: 'clienteController'
         }).when('/clientes', {
             templateUrl: 'pages/clientes.html',
             controller: 'clienteController'

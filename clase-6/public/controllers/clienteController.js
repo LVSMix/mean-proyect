@@ -1,7 +1,7 @@
 var clienteController = angular.module('clienteController', []);
 
-clienteController.controller('clienteController', ['$scope', '$http', 'clienteService',
-    function($scope, $http, clienteService) {
+clienteController.controller('clienteController', ['$scope', '$http', '$location', 'clienteService',
+    function($scope, $http, $location, clienteService) {
         $scope.nombre = "";
         $scope.saludo = "";
 
@@ -13,6 +13,10 @@ clienteController.controller('clienteController', ['$scope', '$http', 'clienteSe
             clienteService.getClientes().then(function(data) {
                 $scope.clientes = data.data;
             });
+        }
+
+        $scope.go = function(path) {
+            $location.path(path);
         }
 
         $scope.saludo = function() {
