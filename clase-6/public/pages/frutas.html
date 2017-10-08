@@ -1,0 +1,14 @@
+<div ng-init="init()" ng-controller="frutasController">
+    <h1>Frutas</h1>
+    <table>
+        <tr>
+            <td>Fruta</td>
+            <td>Precio</td>
+        </tr>
+        <tr ng-repeat="fruta in frutas">
+            <td>{{fruta.nombre}}</td>
+            <td>{{fruta.precio}}</td>
+        </tr>
+    </table>
+
+</div>

@@ -25,12 +25,16 @@ clienteController.controller('clienteController', ['$scope', '$http', '$location
         }
 
         $scope.cliente = {
-            nombre: 'Jhon',
+            nombre: 'Jhonny Cash',
             direccion: 'Av. Jose pardo 481'
         };
 
+
         $scope.cliente1 = { nombre: 'Percy', direccion: 'Calle Los Manzanos' };
         $scope.cliente2 = { nombre: 'Gerardo', direccion: 'Calle Dueñas' };
+
+
+
 
     }
 ]);
