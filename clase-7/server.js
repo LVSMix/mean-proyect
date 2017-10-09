@@ -4,6 +4,7 @@ var services = require('./services/services');
 var apiFrutaServices = require('./services/apiFrutaServices');
 
 bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: true }))

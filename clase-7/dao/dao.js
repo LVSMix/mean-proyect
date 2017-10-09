@@ -9,7 +9,6 @@ var ObjectId = require('mongodb').ObjectID;
 
 
 function save(cliente) {
-
     // Set our collection
     var collection = db.get('clientecollection');
     return collection.insert({

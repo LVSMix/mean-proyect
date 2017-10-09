@@ -19,7 +19,7 @@
             </tr>
             <tr ng-repeat="cliente in clientes" ng-show="clientes.length >0">
                 <td width="20%">
-                    <input type="checkbox" value="cliente.id" />
+                    <input type="checkbox" ng-click="selectedCliente(this)" ng-model="checkState" />
                 </td>
                 <td width="40%">
                     {{cliente.nombre}}
@@ -36,7 +36,7 @@
         </table>
         <br><br><br><br>
         <button id="alta" ng-click="go('/altaCliente')">Alta</button>
-        <button id="baja">Eliminar</button>
+        <button id="baja" ng-click="eliminarCliente()">Eliminar</button>
         <button id="modi">Modificar</button>
     </div>
 </div>
