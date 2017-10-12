@@ -1,0 +1,9 @@
+<div ng-controller="clienteController">
+    <label>Nombre</label>
+    <input type="text" id="nombre" ng-model="cliente.nombre" />
+    <label>Apellido</label>
+    <input type="text" id="apellido" ng-model="cliente.apellido" />
+    <br><br><br><br>
+    <button id="alta" ng-click="altaCliente()">Aceptar</button>
+    <button id="baja" ng-click="go('/clientes')">Cancelar</button>
+</div>
