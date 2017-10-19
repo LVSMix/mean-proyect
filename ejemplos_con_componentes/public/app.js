@@ -1,6 +1,6 @@
 // Creación del módulo
-var angularApp = angular.module('angularApp', ['ngRoute', 'clienteController', 'ciudadesController', 'homeController', 'frutasController', 'clienteService',
-    'ciudadesService', 'frutasService', 'componentBasicoUno', 'componentesController', 'componentBasicoDos', 'componentBasicoTres', 'frutasComponent'
+var angularApp = angular.module('angularApp', ['ngRoute', 'ngMaterial', 'ngTable', 'clienteController', 'ciudadesController', 'homeController', 'frutasController', 'clienteService',
+    'ciudadesService', 'frutasService', 'componentBasicoUno', 'componentesController', 'componentBasicoDos', 'componentBasicoTres', 'frutasComponent', 'menu', 'datepicker'
 ]);
 
 

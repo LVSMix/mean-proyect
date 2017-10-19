@@ -7,6 +7,9 @@ clienteController.controller('clienteController', ['$scope', '$http', '$location
         $scope.cliente = { nombre: "", apellido: "" };
         $scope.selectedClienteId = "";
 
+        this.myDate = new Date();
+        this.isOpen = false;
+
         $scope.init = function() {
             $scope.all();
         };
