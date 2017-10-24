@@ -14,7 +14,7 @@ fs.watchFile('./server.js', function(event, filename) {
     console.log('Server started');
 });
 
-fs.watchFile('index-async.html', function(event, filename) {
+fs.watchFile('08-index-async.html', function(event, filename) {
     server.kill();
     console.log('Server stopped');
     server = cp.fork('./server.js');
