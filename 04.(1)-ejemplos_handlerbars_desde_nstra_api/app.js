@@ -9,6 +9,8 @@ app.use(express.static('public'));
 app.use('/api', router);
 
 app.engine('handlebars', exphbs());
+/** Para definir layouts**/
+//app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.listen(3000, function() {
